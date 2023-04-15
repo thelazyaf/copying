@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Required field <br>
+        
+        function validateForm() <br>{<br>
+        let x = document.getElementById("fname").value;<br>
+        if (x == "")<br>{<br>
+        alert("Name must be filled out");<br>
+        return false; }}
+
+    </div>
+    <br>
+    <div>
+        . Min and Max length<br>
+        function validateForm() <br>{
+        // for text field<br>
+        let x = document.getElementById("fname").value;<br>
+        if (x.length <10 ||x.length>25)<br> {<br>
+            alert("enter proper length");<br>
+            return false; }<br>
+            // for number field<br>
+            let a = document.getElementById("abc").value;<br>
+            if (isNaN(a) || a < 18 || a> 30) {<br>
+                alert("Input not valid");<br>
+                return false;<br>
+                } else {alert("Input OK");<br>
+                return true;<br>
+                }}<br>
+
+    </div>
+    <br>
+    <div>
+        Pattern match<br>
+        function validateForm() {<br>
+        // only letter and space allowed<br>
+        let x = document.getElementById("fname").value;<br>
+        var regEx = /^[A-Z][a-z\s]*$/;<br>
+        if(x.match(regEx))<br>
+        { return true; }<br>
+        else {<br>
+        alert("Please enter letters and space only.");<br>
+        return false;<br>
+        }}<br>
+
+    </div>
+    <br>
+    <div>
+        For number only<br>
+        function validatenum()<br>
+        {<br>
+        let x1 = document.getElementById("a1").value;<br>
+        const pattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;<br>
+        if(x1.match(pattern))<br>
+        {<br>
+        return true; }<br>
+        else<br>
+        { alert("Please enter letters and space only.");<br>
+        return false; }}<br>
+
+    </div>
+    <br>
+    <div>
+        function onlyNumber(event) {<br>
+        if (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57)) { <br>
+            return true; } else<br>
+            { return false; } }<br>
+    </div>
+    <br>
+    <div>
+function validateForm() {<br>
+const passwordInput = document.getElementById('password');<br>
+const confirmPasswordInput = document.getElementById('confirmPassword');<br>
+const password = passwordInput.value;<br>
+const confirmPassword = confirmPasswordInput.value;<br>
+const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;<br>
+if (!passwordPattern.test(password)) {<br>
+alert('Password must contain at least one digit, one lowercase letter, one uppercase letter, one special character and
+be at least 8 characters long.');<br>
+return false;<br>
+} else if (confirmPassword !== password) {<br>
+alert(`Passwords don't match!`);<br>
+return false;<br>
+}<br>
+return true;<br>
+}<br>
+    </div>
+</body>
+</html>
